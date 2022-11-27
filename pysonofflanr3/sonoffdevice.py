@@ -402,25 +402,10 @@ class SonoffDevice(object):
 
             # Handle shutdown gracefully by waiting for all tasks
             # to be cancelled
-            tasks = asyncio.gather(
-                *self.tasks, loop=self.loop, return_exceptions=True
-            )
+            tasks = asyncio.all_tasks(loop=self.loop)
 
-            if self.new_loop:
-                tasks.add_done_callback(lambda t: self.loop.stop())
-
-            tasks.cancel()
-
-            # Keep the event loop running until it is either
-            # destroyed or all tasks have really terminated
-            if self.new_loop:
-                while (
-                    not tasks.done()
-                    and not self.loop.is_closed()
-                    and not self.loop.is_running()
-                ):
-                    self.loop.run_forever()
-
+            for t in tasks:
+                t.cancel()
         except Exception as ex:  # pragma: no cover
             self.logger.error(
                 "Unexpected error in shutdown_event_loop(): %s", format(ex)
