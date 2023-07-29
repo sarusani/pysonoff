@@ -30,6 +30,10 @@ class MyListener:
     def __init__(self):
 
         self.devices = {}
+        
+    def update_service(self, zconf, typ, name):
+        """Callback when a service is updated."""
+        pass
 
     def add_service(self, zeroconf, type, name):
 
