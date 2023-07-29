@@ -1,6 +1,11 @@
 History
 =======
 
+
+1.1.5 (2023-07-30)
+------------------
+* Fixed zeroconf behaviour
+
 1.1.4 (2020-03-29)
 ------------------
 * Enabled code to work if device IP address changes

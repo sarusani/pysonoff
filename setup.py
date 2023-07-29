@@ -11,20 +11,18 @@ with open('README.rst') as readme_file:
 with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
-requirements = ['Click>=7.0', 'click_log', 'pycryptodome', 'requests', 'zeroconf>=0.24.5']
+requirements = ['Click>=8.1.6', 'click_log>=0.4.0', 'pycryptodome>=3.18.0', 'requests>=2.25.1', 'zeroconf>=0.71.4']
 setup_requirements = []
 test_requirements = ['pytest', 'tox', 'python-coveralls', 'flask', 'flake8']
 
 PROJECT_URLS = {
-    "Home Assistant component": "https://github.com/mattsaxon/sonoff-lan-mode-homeassistant/",
-    "Bug Reports": "https://github.com/mattsaxon/pysonofflan/issues/",
-    "Component Docs": "https://pysonofflanr3.readthedocs.io/",
+    "Bug Reports": "https://github.com/sarusani/pysonofflan/issues/",
     "Itead Dev Docs": "https://github.com/itead/Sonoff_Devices_DIY_Tools/tree/master/other/"
 }
 
 setup(
-    author="Matt Saxon",
-    author_email='saxonmatt@hotmail.com',
+    author="Sarusani",
+    author_email='sarusani@gmail.com',
     classifiers=[
         'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
@@ -33,6 +31,7 @@ setup(
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.9',
         'Topic :: Home Automation'
     ],
     description="Interface for Sonoff devices running v3+ Itead "
@@ -52,8 +51,8 @@ setup(
     setup_requires=setup_requirements,
     test_suite='tests',
     tests_require=test_requirements,
-    url='https://github.com/mattsaxon/pysonofflan',
+    url='https://github.com/sarusani/pysonofflan',
     project_urls=PROJECT_URLS,
-    version='1.1.4',
+    version='1.1.5',
     zip_safe=False,
 )
