@@ -39,7 +39,7 @@ Install
 ------------------
 ::
 
-    $ pip install pysonoff@git+https://github.com/sarusani/pysonoff
+    $ pip install pysonoff@git+https://github.com/sarusani/pysonoff.git
 
 Command-Line Usage
 ------------------

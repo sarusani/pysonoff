@@ -10,7 +10,7 @@ History
 1.1.4 (2020-03-29)
 ------------------
 * Enabled code to work if device IP address changes
-* Fixed faulty CLI introduced with 1.1.3 (https://github.com/mattsaxon/pysonoff/issues/65)
+* Fixed faulty CLI introduced with 1.1.3 (https://github.com/mattsaxon/pysonofflan/issues/65)
 * Removed previous workaround code for earlier version of zeroconf (<=24.4)
 
 1.1.3 (2020-02-16)
