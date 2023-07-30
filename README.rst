@@ -7,11 +7,6 @@ Control Sonoff devices running original firmware, in LAN mode.
 
 To control Sonoff switches running the V3+ Itead firmware (tested on 3.0, 3.0.1, 3.1.0, 3.3.0, 3.4.0, 3.5.0), locally (LAN mode).
 
-Unfortunately @AlexxIT has not (yet) made his component callable outside of Home Assistant, but since I'm not using this component, I will not be maintaining it. Sorry.
-
-**This will only work for Sonoff devices running V3+ of the stock (Itead / eWeLink) firmware. For users of V1.8.0 - V2.6.1, please use**  `pysonoff <https://pypi.org/project/pysonoff/>`_
-
-
 This module provides a way to interface with Sonoff smart home devices,
 such as smart switches (e.g. Sonoff Basic), plugs (e.g. Sonoff S20),
 and wall switches (e.g. Sonoff Touch), when these devices are in LAN Mode.
@@ -20,11 +15,19 @@ LAN Mode is a feature introduced by manufacturer Itead, to allow operation
 locally when their servers are unavailable.
 Further details can be found in the `eWeLink LAN Mode guide`__.
 
-__ https://help.ewelink.cc/hc/en-us/articles/360007134171-LAN-Mode-Tutorial
+__ https://help.ewelink.cc/hc/en-us/articles/360059321372-Does-my-eWeLink-device-support-LAN-
 
 Since mid 2018, the firmware Itead have shipped with most Sonoff devices
 has provided this feature, allowing devices to be controlled directly
 on the local network using a WebSocket connection on port 8081.
+
+To optain the API key for your device:
+
+#. press the button on your device for 5sec (quick discover -> 3 blinks)
+#. press the button on your device for 5sec again (discover -> fast blink)
+#. connect to device wifi & open "http://10.10.7.1/device"
+
+__ https://pysonofflanr3.readthedocs.io/encryption.html
 
 Features
 --------
@@ -56,7 +59,7 @@ Command-Line Usage
                            Inching/Momentary switch.
       -l, --level LVL  Either CRITICAL, ERROR, WARNING, INFO or DEBUG
       --help               Show this message and exit.
-      --api_key KEY        Needed for devices not in DIY mode. See https://pysonoff.readthedocs.io/encryption.html
+      --api_key KEY        Needed for devices not in DIY mode.
       
     Commands:
       discover  Discover devices in the network
@@ -94,6 +97,8 @@ Library Usage
 
 All common, shared functionality is available through :code:`SonoffSwitch` class::
 
+    from pysonoff import SonoffSwitch
+
     x = SonoffSwitch("192.168.1.50")
 
 Upon instantiating the SonoffSwitch class, a connection is
@@ -102,6 +107,8 @@ initiated and device state is populated, but no further action is taken.
 For most use cases, you'll want to make use of the :code:`callback_after_update`
 parameter to do something with the device after a connection has been
 initialised, for example::
+
+    from pysonoff import SonoffSwitch
 
     async def print_state_callback(device):
         if device.basic_info is not None:
