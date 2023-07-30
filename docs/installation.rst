@@ -13,7 +13,7 @@ You can either clone the public repository:
 
 .. code-block:: console
 
-    $ git clone git://github.com/sarusani/pysonoff
+    $ git clone git://github.com/sarusani/pysonoff.git
 
 And install it with:
 

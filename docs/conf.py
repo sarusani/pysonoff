@@ -54,8 +54,8 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'pysonoff'
-copyright = u"2019-2020, Matt Saxon, 2019 Andrew Beveridge"
-author = u"Matt Saxon"
+copyright = u"2023, Sarusani, 2019-2020, Matt Saxon, 2019 Andrew Beveridge"
+author = u"Sarusani"
 
 # The version info for the project you're documenting, acts as replacement
 # for |version| and |release|, also used in various other places throughout
@@ -136,7 +136,7 @@ latex_elements = {
 latex_documents = [
     (master_doc, 'pysonoff.tex',
      u'pysonoff Documentation',
-     u'Matt Saxon', 'manual'),
+     u'Sarusani', 'manual'),
 ]
 
 
