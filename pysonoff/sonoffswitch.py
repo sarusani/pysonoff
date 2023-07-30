@@ -2,8 +2,8 @@ import asyncio
 import logging
 from typing import Callable, Awaitable, Dict
 
-from pysonofflanr3 import SonoffDevice
-from pysonofflanr3 import SonoffLANModeClient
+from pysonoff import SonoffDevice
+from pysonoff import SonoffLANModeClient
 
 
 class SonoffSwitch(SonoffDevice):

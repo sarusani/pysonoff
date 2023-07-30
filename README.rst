@@ -1,55 +1,15 @@
 =============
-pysonofflanr3
+pysonoff
 =============
-
-
-.. image:: https://img.shields.io/pypi/v/pysonofflanr3.svg
-    :target: https://pypi.python.org/pypi/pysonofflanr3
-    :alt: Latest PyPi Release
-
-.. image:: https://img.shields.io/pypi/pyversions/pysonofflanr3.svg?style=flat
-    :target: https://pypi.python.org/pypi/pysonofflanr3
-    :alt: Supported Python Versions
-
-.. image:: https://img.shields.io/travis/mattsaxon/pysonofflan.svg
-    :target: https://travis-ci.org/mattsaxon/pysonofflan
-    :alt: Build Status
-
-.. image:: https://readthedocs.org/projects/pysonofflanr3/badge/?version=latest
-    :target: https://pysonofflanr3.readthedocs.io/
-    :alt: Documentation Status
-
-.. image:: https://coveralls.io/repos/github/mattsaxon/pysonofflan/badge.svg
-    :target: https://coveralls.io/github/mattsaxon/pysonofflan
-    :alt: Code Coverage
-
-.. image:: https://img.shields.io/pypi/wheel/pysonofflanr3.svg
-    :target: https://pypi.org/project/pysonofflanr3/#files
-    :alt: Has Wheel Package
-   
-.. image:: https://pyup.io/repos/github/mattsaxon/pysonofflan/shield.svg
-    :target: https://pyup.io/repos/github/mattsaxon/pysonofflan/
-    :alt: Updates
-
-.. image:: https://pyup.io/repos/github/mattsaxon/pysonofflan/python-3-shield.svg
-    :target: https://pyup.io/repos/github/mattsaxon/pysonofflan/
-    :alt: Python 3
-
-.. image:: https://www.buymeacoffee.com/assets/img/guidelines/download-assets-sm-2.svg
-    :target: https://www.buymeacoffee.com/XTOsBAc
-    :alt: Buy Me A Coffee
 
 Control Sonoff devices running original firmware, in LAN mode.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To control Sonoff switches running the V3+ Itead firmware (tested on 3.0, 3.0.1, 3.1.0, 3.3.0, 3.4.0, 3.5.0), locally (LAN mode).
 
-# No longer maintained!
-This component is no longer being maintained, instead for Home Assistant users, use https://github.com/AlexxIT/SonoffLAN, which is more functional and stable. Any future contributions I make will be to this repo.
-
 Unfortunately @AlexxIT has not (yet) made his component callable outside of Home Assistant, but since I'm not using this component, I will not be maintaining it. Sorry.
 
-**This will only work for Sonoff devices running V3+ of the stock (Itead / eWeLink) firmware. For users of V1.8.0 - V2.6.1, please use**  `PySonoffLAN <https://pypi.org/project/pysonofflan/>`_
+**This will only work for Sonoff devices running V3+ of the stock (Itead / eWeLink) firmware. For users of V1.8.0 - V2.6.1, please use**  `pysonoff <https://pypi.org/project/pysonoff/>`_
 
 
 This module provides a way to interface with Sonoff smart home devices,
@@ -75,22 +35,17 @@ Features
 * Listen for state changes announced by the device (e.g. by physical switch)
 * Activate inching/momentary device, with variable ON time (e.g. 1s)
 
-Documentation
-------------------
-
-* Documentation: https://pysonofflanr3.readthedocs.io.
-
 Install
 ------------------
 ::
 
-    $ pip install pysonofflanr3
+    $ pip install pysonoff@git+https://github.com/sarusani/pysonoff
 
 Command-Line Usage
 ------------------
 ::
 
-    Usage: pysonofflanr3 [OPTIONS] COMMAND [ARGS]...
+    Usage: pysonoff [OPTIONS] COMMAND [ARGS]...
 
       A cli tool for controlling Sonoff Smart Switches/Plugs in LAN Mode.
 
@@ -101,7 +56,7 @@ Command-Line Usage
                            Inching/Momentary switch.
       -l, --level LVL  Either CRITICAL, ERROR, WARNING, INFO or DEBUG
       --help               Show this message and exit.
-      --api_key KEY        Needed for devices not in DIY mode. See https://pysonofflanr3.readthedocs.io/encryption.html
+      --api_key KEY        Needed for devices not in DIY mode. See https://pysonoff.readthedocs.io/encryption.html
       
     Commands:
       discover  Discover devices in the network
@@ -114,16 +69,16 @@ Usage Example
 =======================
 ::
 
-    $ pysonofflanr3 discover
+    $ pysonoff discover
     2019-01-31 00:45:32,074 - info: Attempting to discover Sonoff LAN Mode devices on the local network, please wait...
     2019-01-31 00:46:24,007 - info: Found Sonoff LAN Mode device at IP 192.168.0.77
 
-    $ pysonofflanr3 --host 192.168.0.77 state
+    $ pysonoff --host 192.168.0.77 state
     2019-01-31 00:41:34,931 - info: Initialising SonoffSwitch with host 192.168.0.77
     2019-01-31 00:41:35,016 - info: == Device: 10006866e9 (192.168.0.77) ==
     2019-01-31 00:41:35,016 - info: State: OFF
 
-    $ pysonofflanr3 --host 192.168.0.77 on
+    $ pysonoff --host 192.168.0.77 on
     2019-01-31 00:49:40,334 - info: Initialising SonoffSwitch with host 192.168.0.77
     2019-01-31 00:49:40,508 - info:
     2019-01-31 00:49:40,508 - info: Initial state:

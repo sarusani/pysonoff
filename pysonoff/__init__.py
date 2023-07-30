@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 """
-pySonoffLANR3
+pysonoff
 This module provides a way to interface with Sonoff smart home devices,
 such as smart switches (e.g. Sonoff Basic), plugs (e.g. Sonoff S20),
 and wall switches (e.g. Sonoff Touch), when these devices are in LAN Mode.
@@ -51,7 +51,7 @@ to be handled by the user of the library.
 __author__ = "Matt Saxon"
 __email__ = "saxonmatt@hotmail.com"
 __version__ = "1.1.4"
-__url__ = "https://github.com/mattsaxon/pysonofflan"
+__url__ = "https://github.com/mattsaxon/pysonoff"
 
 # flake8: noqa
 from .client import SonoffLANModeClient

@@ -1,4 +1,4 @@
-Welcome to pySonoffLANR3's documentation!
+Welcome to pysonoff's documentation!
 ======================================
 
 .. toctree::

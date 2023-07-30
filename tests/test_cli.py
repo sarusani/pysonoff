@@ -1,15 +1,15 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-"""Tests for `pysonofflan` package."""
+"""Tests for `pysonoff` package."""
 import unittest
 from click.testing import CliRunner
-from pysonofflanr3 import cli
+from pysonoff import cli
 from tests.sonoff_mock import start_device, stop_device
 
 
 class TestCLI(unittest.TestCase):
-    """Tests for pysonofflan CLI interface."""
+    """Tests for pysonoff CLI interface."""
 
     def setUp(self):
         """Set up test fixtures, if any."""

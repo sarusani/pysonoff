@@ -2,7 +2,7 @@ import time
 from typing import Dict
 from datetime import datetime
 from zeroconf import ServiceBrowser, Zeroconf
-from pysonofflanr3 import utils
+from pysonoff import utils
 
 
 class Discover:

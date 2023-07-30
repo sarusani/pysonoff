@@ -1,5 +1,5 @@
 """
-pysonofflan
+pysonoff
 Python library supporting Sonoff Smart Devices (Basic/S20/Touch) in LAN Mode.
 """
 import asyncio
@@ -8,8 +8,8 @@ import logging
 import sys
 from typing import Callable, Awaitable, Dict
 import traceback
-from pysonofflanr3 import SonoffLANModeClient
-from pysonofflanr3 import utils
+from pysonoff import SonoffLANModeClient
+from pysonoff import utils
 
 
 class SonoffDevice(object):

@@ -6,7 +6,7 @@ import click
 import click_log
 from click_log import ClickHandler
 
-from pysonofflanr3 import SonoffSwitch, Discover
+from pysonoff import SonoffSwitch, Discover
 
 if sys.version_info < (3, 6):  # pragma: no cover
     print(
@@ -56,32 +56,32 @@ pass_config = click.make_pass_decorator(dict, ensure=True)
 @click.group(invoke_without_command=True)
 @click.option(
     "--host",
-    envvar="PYSONOFFLAN_HOST",
+    envvar="pysonoff_HOST",
     required=False,
     help="IP address or hostname of the device to connect to.",
 )
 @click.option(
     "--device_id",
-    envvar="PYSONOFFLAN_device_id",
+    envvar="pysonoff_device_id",
     required=False,
     help="Device ID of the device to connect to.",
 )
 @click.option(
     "--api_key",
-    envvar="PYSONOFFLAN_api_key",
+    envvar="pysonoff_api_key",
     required=False,
     help="api key for the device to connect to.",
 )
 @click.option(
     "--inching",
-    envvar="PYSONOFFLAN_inching",
+    envvar="pysonoff_inching",
     required=False,
     help='Number of seconds of "on" time if this is an '
     "Inching/Momentary switch.",
 )
 @click.option(
     "--wait",
-    envvar="PYSONOFFLAN_wait",
+    envvar="pysonoff_wait",
     required=False,
     help="time to wait for listen.",
 )

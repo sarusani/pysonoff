@@ -5,7 +5,7 @@ import threading
 import subprocess
 from flask import Flask, json, request, abort
 from zeroconf import Zeroconf, ServiceInfo
-from pysonofflanr3 import sonoffcrypto
+from pysonoff import sonoffcrypto
 
 
 next_port = 8082  # to stop conflicting with command line by default

@@ -10,8 +10,8 @@ from zeroconf import ServiceBrowser, Zeroconf
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 
-from pysonofflanr3 import sonoffcrypto
-from pysonofflanr3 import utils
+from pysonoff import sonoffcrypto
+from pysonoff import utils
 import socket
 
 

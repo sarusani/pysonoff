@@ -16,7 +16,7 @@ setup_requirements = []
 test_requirements = ['pytest', 'tox', 'python-coveralls', 'flask', 'flake8']
 
 PROJECT_URLS = {
-    "Bug Reports": "https://github.com/sarusani/pysonofflan/issues/",
+    "Bug Reports": "https://github.com/sarusani/pysonoff/issues/",
     "Itead Dev Docs": "https://github.com/itead/Sonoff_Devices_DIY_Tools/tree/master/other/"
 }
 
@@ -38,20 +38,20 @@ setup(
                 "firmware.",
     entry_points={
         'console_scripts': [
-            'pysonofflanr3=pysonofflanr3.cli:cli',
+            'pysonoff=pysonoff.cli:cli',
         ],
     },
     install_requires=requirements,
     license="MIT license",
     long_description=readme + '\n\n' + history,
     include_package_data=True,
-    keywords='pysonofflanr3, homeassistant',
-    name='pysonofflanr3',
-    packages=find_packages(include=['pysonofflanr3']),
+    keywords='pysonoff, homeassistant',
+    name='pysonoff',
+    packages=find_packages(include=['pysonoff']),
     setup_requires=setup_requirements,
     test_suite='tests',
     tests_require=test_requirements,
-    url='https://github.com/sarusani/pysonofflan',
+    url='https://github.com/sarusani/pysonoff',
     project_urls=PROJECT_URLS,
     version='1.1.5',
     zip_safe=False,
